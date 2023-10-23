@@ -51,6 +51,7 @@ export class ListingPlaceComponent implements OnInit {
         (position) => {
           this.latitude = position.coords.latitude;
           this.longitude = position.coords.longitude;
+          this.getOpenSteetMapResult(this.latitude, this.longitude);
           this.closestToUser = true;
         },
         (error) => {
@@ -62,6 +63,18 @@ export class ListingPlaceComponent implements OnInit {
       this.closestToUser = false;
     }
 
+  }
+
+
+  private getOpenSteetMapResult(latitude: number, longitude: number) {
+    this.mapService.retrievePlaceInformation(latitude, longitude).subscribe(
+      (success) => {
+        this.userCoordinates = { city: success.address.city, country: success.address.country }
+      },
+      (error) => {
+        this.closestToUser = false;
+      }
+    );
   }
 
 

@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class MapService {
 
-  private apiUrl: string = ' https://nominatim.openstreetmap.org/reverse?lat={LATITUDE}&lon={LONGITUDE}&format=jsonv2';
+  private apiUrl: string = ' https://nominatim.openstreetmap.org/reverse?lat={LATITUDE}&lon={LONGITUDE}&format=jsonv2&accept-language=en';
 
   constructor(private http: HttpClient) { }
 

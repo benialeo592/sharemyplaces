@@ -9,7 +9,7 @@ import { ListingPlaceComponent } from './sections/listing-place/listing-place.co
 const routes: Routes = [
   {path:'', component: HomeComponent},
   {path:'auth', component: AuthComponent},
-  {path: 'listing', component: ListingPlaceComponent, },
+  {path: 'listing', component: ListingPlaceComponent },
   {path: 'share', component: SharePlaceComponent, canActivate: [AuthGuard]}
 ];
 
