@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "sharemyplaces-54037": {
+      "hosting": {
+        "sharemyplaces": [
+          "sharemyplaces-54037"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "sharemyplaces-54037"
+  }
+}

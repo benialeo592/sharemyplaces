@@ -1,6 +1,6 @@
 <nav class="flex items-center justify-between flex-wrap bg-teal-500 p-6">
   <div class="flex items-center flex-shrink-0 text-white mr-6">
-    <img src="../../assets/my-place-logo.png" class="w-24 h-16" alt="logo">
+    <img routerLink="/" src="../../assets/my-place-logo.png" class="w-24 h-16 cursor-pointer" alt="logo">
     <span class="ml-5 font-semibold text-xl tracking-tight">My Places</span>
   </div>
   <div class="block lg:hidden">
@@ -10,8 +10,11 @@
   </div>
   <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
     <div class="text-sm lg:text-lg lg:flex-grow lg:text-center">
-      <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+      <a routerLink="/listing" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
         View places
+      </a>
+       <a *ngIf="isAuthenticated" routerLink="/share" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+        Share your place
       </a>
     </div>
     <div>

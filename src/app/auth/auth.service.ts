@@ -4,6 +4,7 @@ import { AuthResponseData } from './auth-response-data';
 import { HttpClient } from '@angular/common/http';
 import { UserAuth } from './userAuth';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 export class AuthService {
 
   public user = new BehaviorSubject<UserAuth | null>(null);
-  private secretKey: string = '';
+  private secretKey: string = environment.firebase.apiKey;
   private tokenExpirationTimer: any;
 
   constructor(private http: HttpClient, private router: Router) { }

@@ -1,0 +1,33 @@
+<div class="bg-white py-24 sm:py-32">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl lg:mx-0">
+      <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        Discover new place thanks to others
+      </h2>
+      <p class="mt-2 text-lg leading-8 text-gray-600">
+        If your geolocalization is active the retrieved result will be the closest to you, otherwise all the results will be retrieved.
+      </p>
+    </div>
+    <div
+      class="mx-auto mt-10 grid max-w-2xl grid-cols-3 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3 justify-center">
+      <div *ngFor="let place of places" class="max-w-sm rounded overflow-hidden shadow-lg">
+       <div class="flex items-center gap-x-4 text-xs mb-1 justify-between">
+          <div>
+            <time [dateTime]="place.stored_at" class="text-gray-500">{{place.stored_at}}</time>
+          </div>
+          <div>
+            <p>{{place.country}}</p>
+            <p>{{place.city}}</p>
+          </div>
+        </div>
+        <img class="w-full" [src]="place.imgUrl" alt="cover">
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2">{{place.title}}</div>
+          <p class="text-gray-700 text-base">
+           {{place.description}}
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
